@@ -106,6 +106,14 @@ ul li a{
     color:white;
     margin-left: 10px;
     margin-top: 20px;
+    box-shadow: 0 0 10px rgb(86, 87, 87);
+    transition: transform 0.3s;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.know_us:hover{
+    transform: scale(1.1);
 }
 
 /* El flex-wrap: wrap es necesario para que la tarjetas se reacomoden solas. El gap se aplicará a todas las targetas*/
