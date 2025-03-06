@@ -1,0 +1,191 @@
+/* Estilo de cajón para evitar complicaciones */
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    font-family: "Fira Sans Condensed", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+/* Unidad raíz */
+
+html{
+    font-size: 20px;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+    font-size: 1.2rem;
+}
+
+ul li a{
+    color: white;
+}
+
+/* El display: flex es un recurso avanzado y hace que los elementos estén es una misma línea*/
+/* justify-content: space-between ubica los elementos separados entre ellos, pero continuán en la msima línea */
+/* Height: hace referencia a la altura que tendrá la navbar */
+/* Si se utiliza un gap o padding en "px" para agregar separación a los elementos estás medidas serán absolutas e impedirán que el diseño sea responsivo. Para ello, es necesario que sean en "%" y la unida "em o rem" para font-size*/
+/* La unidad "em" utiliza el valor establecido en el padre y la unidad "rem" hace referencia al elemento raíz o el html*/
+/* Las unidades relativas o rem/em sí pueden ser decimales */
+
+.navbar{
+    display: flex;
+    position: fixed;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    padding: 0 15px;
+    background-color: rgb(14, 189, 178);
+    color: white;
+}
+
+/* Unidad rem o relativa al elemento raíz con decimales */
+.navbar h1{
+    font-size: 1.5rem;
+}
+
+/* Regla Mobile First */
+.navbar ul{
+    display: none;
+}
+
+/* Estilización del ícono del menu de barras */
+.menu-barras{
+    background-image: url("./assets/menu.png");
+    background-size: cover;
+    background-position: center;
+    width: 1.1rem;
+    height: 1.1rem;
+}
+
+/* El display flex se agrega para que los elementos se adapten a diferentes pantallas */
+/* El flex-direction: column es para que el contenido este apilado */
+/* Para que la imagen puede visualizarse bien es necesario que sea de un tamaño mínimo de 1280 x 400 y máximo de 1380 X 700px */
+/* El atributo align-items: center se añade para seguir el regla de Mobile First*/
+.hero{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    background-image: url("./assets/servicios.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+}
+
+.hero h2{
+    font-size: 1.2rem;
+    margin-left: 10px;
+}
+
+.hero p{
+    font-size: 1rem;
+    margin-left: 10px;
+}
+
+.hero div{
+    padding: 0 20px;
+}
+
+/* Estilización del botón */
+.know_us{
+    padding: 10px 20px; /* orden vertical y horizontal*/
+    border: none;
+    background: rgb(34, 184, 174);
+    font-size: 1.1rem;
+    color:white;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+
+/* El flex-wrap: wrap es necesario para que la tarjetas se reacomoden solas. El gap se aplicará a todas las targetas*/
+.servicios{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 40px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+#servicios{
+    background-color: rgb(14, 189, 178);
+}
+
+#servicios h2{
+    padding-top: 30px;
+    text-align: center;
+    color:white;
+}
+
+/* El atributo transition y transform hacen que las tarjetas tengan movimiento al hacer click en ellas con el cursor */
+.card{
+    background-color: whitesmoke;
+    color:rgb(7, 41, 56);
+    padding: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+    width: 250px;
+    box-shadow: 0 0 10px rgb(86, 87, 87);
+    transition: transform 0.3s;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.card:hover{
+    transform: scale(1.1);
+}
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+    padding: 40px 0;
+    background: rgb(239, 239, 239);
+    color:rgb(72, 72, 72);
+}
+
+/* --------- */
+
+/* Regla utilizando Media Queries | Para que aparezca la lista de elementos mostrados en la navbar en pantallas a partir de 769px(breakpoint)*/
+/* navbar ul: hace referencia a la lista de elementos */
+/* gap es el espacido de los elementos dentro de la navbar */
+
+/* Adición a la regla con Media Queries | Indicando el breakpoint para que aparezca el ìcono del menú de barras */
+@media screen and (min-width:769px){
+    .navbar ul{
+        display: flex;
+        gap: 10px;
+    }
+
+    .menu-barras{
+        display: none;
+    }
+}
+
+/* Breakpoint con Media Queries | Para pantallas grandes */
+@media screen and (min-width: 426px){
+    .hero div{
+        max-width: 50%;
+    }
+    
+    .hero{
+        align-items: flex-start;
+    }
+}
+
+
+
